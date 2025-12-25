@@ -63,6 +63,28 @@ export function iniciarQuiz(questoes, config = {}) {
     // Botões de Controle
     document.getElementById('btn-proxima').onclick = proximaQuestao;
     document.getElementById('btn-reiniciar').onclick = () => window.location.reload();
+	// --- NOVO: LÓGICA DE COMPARTILHAR ---
+    const btnShare = document.getElementById('btn-compartilhar');
+    btnShare.onclick = async () => {
+        // Dados para compartilhar
+        const shareData = {
+            title: 'CNH Fácil',
+            text: `Acabei de fazer o simulado CNH Fácil! Acertei ${pontos} de ${listaQuestoes.length} questões. 🚗💨`,
+            url: window.location.href // Pega o link atual do site (sua Vercel)
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData); // Tenta usar o nativo do celular
+            } else {
+                // Se estiver no PC e não suportar, copia o link
+                await navigator.clipboard.writeText(window.location.href);
+                alert("Link copiado para a área de transferência!");
+            }
+        } catch (err) {
+            console.log('Compartilhamento cancelado');
+        }
+    };
     
     const btnSair = document.getElementById('btn-sair-quiz');
     btnSair.onclick = () => { if(confirm("Sair do simulado?")) window.location.reload(); };

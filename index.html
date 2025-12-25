@@ -40,6 +40,39 @@
                 <span>🏆 Modo Desafio</span>
                 <small>Personalize seu treino</small>
             </button>
+
+            <div style="margin-top: 30px; margin-bottom: 20px;">
+                <button id="btn-abrir-privacidade" style="background:none; border:none; color: #94a3b8; font-size: 0.8rem; cursor: pointer; text-decoration: underline;">
+                    Termos de Uso e Privacidade
+                </button>
+            </div>
+        </div>
+
+        <div id="tela-intro-simulado" class="oculto">
+            <div class="cabecalho-interno">
+                <button class="btn-voltar" id="btn-voltar-intro-simulado">⬅ Voltar</button>
+            </div>
+            
+            <div class="card-briefing">
+                <div id="briefing-icon" style="background: #e0e7ff; color: #4f46e5;">📝</div>
+                
+                <h2>Simulado Completo</h2>
+                <p style="margin-bottom: 20px;">Teste seus conhecimentos com questões elaboradas com base no CTB.</p>
+                
+                <ul style="text-align: left; color: #64748b; margin-bottom: 30px; list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">✅ <strong>30 Questões</strong> sorteadas aleatoriamente.</li>
+                    <li style="margin-bottom: 10px;">⏱️ <strong>40 Minutos</strong> de tempo limite.</li>
+                    <li>🎯 Precisa de <strong>21 acertos</strong> (70%) para passar.</li>
+                </ul>
+
+                <button id="btn-iniciar-simulado-real" class="btn-menu grande">
+                    Começar a Prova
+                </button>
+
+                <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 25px; border-top: 1px solid #f1f5f9; padding-top: 15px;">
+                    Este aplicativo é estritamente educativo e não possui vínculo com o Detran. As questões são autorais.
+                </p>
+            </div>
         </div>
 
         <div id="tela-temas" class="oculto">
@@ -122,6 +155,37 @@
                 </div>
         </div>
 
+<div id="tela-privacidade" class="oculto">
+            <div class="cabecalho-interno">
+                <button class="btn-voltar" id="btn-voltar-privacidade">⬅ Voltar</button>
+                <h2>Termos e Privacidade</h2>
+            </div>
+            
+            <div class="conteudo-texto">
+                <h3>1. Termos de Uso (Isenção de Responsabilidade)</h3>
+                <p>O aplicativo <strong>CNH Fácil</strong> é uma ferramenta de estudo complementar e não oficial. Embora nos esforcemos para manter as questões atualizadas com base no Código de Trânsito Brasileiro (CTB), <strong>não garantimos</strong> que o conteúdo reflete exatamente as questões da prova oficial do Detran de seu estado.</p>
+                <p>O uso deste aplicativo não garante a aprovação no exame teórico. O desenvolvedor não se responsabiliza por reprovações, taxas de reteste ou quaisquer danos diretos ou indiretos decorrentes do uso deste software.</p>
+
+                <h3>2. Política de Privacidade</h3>
+                <p>Respeitamos sua privacidade. Este aplicativo:</p>
+                <ul>
+                    <li>Não coleta dados pessoais (nome, email, telefone).</li>
+                    <li>Não utiliza geolocalização (GPS).</li>
+                    <li>Não compartilha informações com terceiros.</li>
+                </ul>
+                <p>Todo o progresso e histórico de simulados são salvos localmente na memória do seu dispositivo. Se você desinstalar o aplicativo ou limpar os dados, esse histórico será perdido.</p>
+
+                <h3>3. Direitos Autorais</h3>
+                <p>O código-fonte e o design deste aplicativo são propriedade intelectual do desenvolvedor. As questões são de domínio público ou baseadas na legislação vigente.</p>
+                
+                <h3>4. Contato</h3>
+                <p>Para reportar erros nas questões ou sugerir melhorias, entre em contato com o suporte.</p>
+                
+                <br>
+                <p style="font-size: 0.8rem; color: #cbd5e1; text-align: center;">Versão 1.0.0 • CNH Fácil</p>
+            </div>
+        </div>
+
         <header id="header-quiz" class="oculto">
             <div class="topo-info">
                 <button id="btn-sair-quiz">✕ Sair</button>
@@ -150,6 +214,11 @@
                 <small>de <span id="total-questoes">0</span></small>
             </div>
             <p id="mensagem-final">...</p>
+            
+            <button id="btn-compartilhar" class="botao-share">
+                📤 Compartilhar Resultado
+            </button>
+
             <button id="btn-reiniciar">Voltar ao Menu</button>
         </div>
 

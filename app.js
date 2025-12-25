@@ -14,30 +14,39 @@ const DESCRICOES_TEMAS = {
 // --- ELEMENTOS DOM (Telas) ---
 const telas = {
     inicial: document.getElementById('tela-inicial'),
+    introSimulado: document.getElementById('tela-intro-simulado'), // Tela de Intro
     temas: document.getElementById('tela-temas'),
     briefing: document.getElementById('tela-briefing'),
     desafioSetup: document.getElementById('tela-desafio-setup'),
     historico: document.getElementById('tela-historico'),
+    privacidade: document.getElementById('tela-privacidade'), // Tela de Privacidade
     headerQuiz: document.getElementById('header-quiz'),
     containerQuiz: document.getElementById('container-quiz'),
     resultado: document.getElementById('tela-resultado')
 };
 
-// --- BOTÕES ---
+// --- BOTÕES DO MENU ---
 const btnSimulado = document.getElementById('btn-simulado');
 const btnTemas = document.getElementById('btn-temas');
 const btnHistorico = document.getElementById('btn-historico');
 const btnModoDesafio = document.getElementById('btn-modo-desafio');
+const btnAbrirPrivacidade = document.getElementById('btn-abrir-privacidade'); // Botão do Rodapé
 
-// --- BOTÕES VOLTAR ---
+// --- BOTÕES DE VOLTAR ---
+const btnVoltarIntroSimulado = document.getElementById('btn-voltar-intro-simulado');
 const btnVoltarTemas = document.getElementById('btn-voltar-temas');
 const btnVoltarBriefing = document.getElementById('btn-voltar-briefing');
 const btnVoltarDesafio = document.getElementById('btn-voltar-desafio');
 const btnVoltarHistorico = document.getElementById('btn-voltar-historico');
+const btnVoltarPrivacidade = document.getElementById('btn-voltar-privacidade');
+
+// --- BOTÕES DE AÇÃO (INICIAR) ---
+const btnIniciarSimuladoReal = document.getElementById('btn-iniciar-simulado-real');
+const btnIniciarTemaFocado = document.getElementById('btn-iniciar-tema-focado');
+const btnIniciarDesafioCustom = document.getElementById('btn-iniciar-desafio-custom');
 
 // --- SETUP DO DESAFIO ---
 const selectTema = document.getElementById('setup-tema');
-const btnIniciarDesafioCustom = document.getElementById('btn-iniciar-desafio-custom');
 
 // Variáveis de Estado
 let bancoDeQuestoes = [];
@@ -62,6 +71,8 @@ async function init() {
         });
 
         setupEventos();
+        
+        // Configura os botões de seleção (chips)
         setupChips('setup-qtd-container', val => desafioQtd = parseInt(val));
         setupChips('setup-tempo-container', val => desafioTempo = parseInt(val));
 
@@ -72,15 +83,21 @@ async function init() {
 }
 
 function setupEventos() {
-    // 1. FAZER SIMULADO
+    // 1. MENU: CLICOU EM FAZER SIMULADO -> ABRE A INTRO
     btnSimulado.addEventListener('click', () => {
+        esconderTelas();
+        telas.introSimulado.classList.remove('oculto');
+    });
+
+    // AÇÃO: COMEÇAR A PROVA (Botão da tela de intro)
+    btnIniciarSimuladoReal.addEventListener('click', () => {
         esconderTelas();
         telas.headerQuiz.classList.remove('oculto');
         iniciarQuiz(bancoDeQuestoes, { 
             modoSimulado: true, 
             qtdQuestoes: 30, 
             tempoMinutos: 40,
-            modoLabel: "Simulado" // NOME CORRETO
+            modoLabel: "Simulado" 
         });
     });
 
@@ -104,10 +121,16 @@ function setupEventos() {
         telas.historico.classList.remove('oculto');
     });
 
+    // 5. PRIVACIDADE
+    btnAbrirPrivacidade.addEventListener('click', () => {
+        esconderTelas();
+        telas.privacidade.classList.remove('oculto');
+    });
+
     // --- AÇÕES INTERNAS ---
     
     // Iniciar Quiz pelo Briefing (Tema Focado)
-    document.getElementById('btn-iniciar-tema-focado').onclick = () => {
+    btnIniciarTemaFocado.onclick = () => {
         if (temaSelecionadoTemp) {
             const questoesDoTema = bancoDeQuestoes.filter(q => q.categoria === temaSelecionadoTemp);
             esconderTelas();
@@ -116,7 +139,7 @@ function setupEventos() {
             iniciarQuiz(questoesDoTema, { 
                 modoSimulado: false, 
                 tempoMinutos: 0,
-                modoLabel: "Estudo: " + temaSelecionadoTemp // Ex: "Estudo: Mecânica"
+                modoLabel: "Estudo: " + temaSelecionadoTemp 
             }); 
         }
     };
@@ -133,15 +156,21 @@ function setupEventos() {
             modoSimulado: true, 
             qtdQuestoes: desafioQtd, 
             tempoMinutos: desafioTempo,
-            modoLabel: "Desafio" // NOME CORRETO
+            modoLabel: "Desafio"
         });
     };
 
-    // Botões Voltar
+    // --- BOTÕES VOLTAR ---
+    btnVoltarIntroSimulado.onclick = voltarMenu;
     btnVoltarTemas.onclick = voltarMenu;
     btnVoltarDesafio.onclick = voltarMenu;
     btnVoltarHistorico.onclick = voltarMenu;
-    btnVoltarBriefing.onclick = () => { esconderTelas(); telas.temas.classList.remove('oculto'); };
+    btnVoltarPrivacidade.onclick = voltarMenu;
+    
+    btnVoltarBriefing.onclick = () => { 
+        esconderTelas(); 
+        telas.temas.classList.remove('oculto'); 
+    };
 }
 
 // --- FUNÇÕES AUXILIARES ---
@@ -166,6 +195,7 @@ function carregarListaDeTemas() {
         const qtd = bancoDeQuestoes.filter(q => q.categoria === tema).length;
         const info = DESCRICOES_TEMAS[tema] || { icon: '📘' };
         
+        // Ajuste no texto: "questões"
         btn.innerHTML = `<span>${info.icon} ${tema}</span> <small>${qtd} questões</small>`;
         btn.onclick = () => abrirBriefing(tema, qtd, info);
         container.appendChild(btn);
@@ -196,8 +226,6 @@ function carregarHistorico() {
     hist.forEach(item => {
         const div = document.createElement('div');
         div.className = `item-historico ${item.aprovado ? 'aprovado' : 'reprovado'}`;
-        
-        // Verifica se tem modoLabel salvo, senão usa padrão
         const modoDisplay = item.modo || "Simulado";
         
         div.innerHTML = `
