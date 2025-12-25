@@ -1,12 +1,27 @@
-# 🎵 Hinos CCB Play
+# 🚗 CNH Fácil - App de Estudos
 
-Aplicativo web progressivo (PWA) para reprodução de hinos da Congregação Cristã no Brasil, com categorias, favoritos, playlists e funcionamento offline.
+Aplicativo web (PWA) desenvolvido para auxiliar estudantes na preparação para a prova teórica do Detran. O app oferece simulados, estudo por temas e modo desafio.
 
-Este projeto foi desenvolvido utilizando apenas **HTML, CSS e JavaScript (Vanilla)**, sem frameworks externos, focando em desempenho, simplicidade e compatibilidade com dispositivos móveis.
+## 📱 Funcionalidades
 
----
+- **Simulado Completo:** 30 questões com tempo limite, simulando a prova real.
+- **Modo Desafio:** Personalize a quantidade de questões e tempo.
+- **Estudo por Tema:** Foco em Legislação, Direção Defensiva, Mecânica, etc.
+- **Offline:** Funciona sem internet (PWA).
+- **Histórico:** Salva os resultados das provas anteriores.
 
-## 🚀 Demonstração
+## 🛠️ Tecnologias
 
-Após publicar no GitHub Pages, o aplicativo poderá ser acessado por um link como:
+- HTML5, CSS3, JavaScript (Vanilla)
+- PWA (Service Workers & Manifest)
+- LocalStorage (para salvar histórico)
 
+## 🚀 Como usar
+
+1. Clone o repositório.
+2. Abra o arquivo `index.html` no navegador.
+3. Para testar o modo offline, é necessário servir via HTTPS ou localhost.
+
+## 📄 Aviso Legal
+
+Este aplicativo é um projeto educacional e não possui vínculo oficial com o Detran.
