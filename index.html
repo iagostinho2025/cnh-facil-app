@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNH Fácil - App</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4f46e5">
+</head>
+<body>
+
+    <div id="app">
+        
+        <div id="tela-inicial">
+            <div class="logo-area">
+                <h1>🚗 CNH Fácil</h1>
+                <p>Seu instrutor de bolso</p>
+            </div>
+            
+            <button id="btn-simulado" class="btn-menu grande">
+                <span>📝 Fazer Simulado</span>
+                <small>30 questões aleatórias • 40 min</small>
+            </button>
+
+            <button id="btn-temas" class="btn-menu">
+                <span>📚 Estudar por Tema</span>
+            </button>
+            
+            <button id="btn-historico" class="btn-menu">
+                <span>📊 Meu Desempenho</span>
+            </button>
+
+            <button id="btn-modo-desafio" class="btn-menu destaque-roxo">
+                <span>🏆 Modo Desafio</span>
+                <small>Personalize seu treino</small>
+            </button>
+        </div>
+
+        <div id="tela-temas" class="oculto">
+            <div class="cabecalho-interno">
+                <button class="btn-voltar" id="btn-voltar-temas">⬅ Voltar</button>
+                <h2>Escolha um Tema</h2>
+            </div>
+            <div id="lista-temas">
+                </div>
+        </div>
+
+        <div id="tela-briefing" class="oculto">
+            <div class="cabecalho-interno">
+                <button class="btn-voltar" id="btn-voltar-briefing">⬅ Voltar</button>
+            </div>
+            
+            <div class="card-briefing">
+                <div id="briefing-icon">📘</div>
+                <h2 id="briefing-titulo">Título</h2>
+                <p id="briefing-desc">Descrição do tema...</p>
+                
+                <div class="briefing-meta">
+                    <span id="briefing-qtd">0 questões</span>
+                    <span>•</span>
+                    <span>Sem tempo limite</span>
+                </div>
+
+                <button id="btn-iniciar-tema-focado" class="btn-menu grande">
+                    Começar Agora
+                </button>
+            </div>
+        </div>
+
+        <div id="tela-desafio-setup" class="oculto">
+            <div class="cabecalho-interno">
+                <button class="btn-voltar" id="btn-voltar-desafio">⬅ Voltar</button>
+                <h2>Configurar Desafio</h2>
+            </div>
+
+            <div class="setup-container">
+                <div class="setup-group">
+                    <label>📚 Qual o foco?</label>
+                    <select id="setup-tema" class="input-select">
+                        <option value="todos">Todos os Temas (Misturado)</option>
+                        </select>
+                </div>
+
+                <div class="setup-group">
+                    <label>🎯 Quantas questões?</label>
+                    <div class="chips-container" id="setup-qtd-container">
+                        <button class="chip-option" data-value="10">10</button>
+                        <button class="chip-option selected" data-value="30">30</button>
+                        <button class="chip-option" data-value="50">50</button>
+                        <button class="chip-option" data-value="999">Todas</button>
+                    </div>
+                </div>
+
+                <div class="setup-group">
+                    <label>⏱️ Tempo limite?</label>
+                    <div class="chips-container" id="setup-tempo-container">
+                        <button class="chip-option" data-value="10">10 min</button>
+                        <button class="chip-option" data-value="20">20 min</button>
+                        <button class="chip-option selected" data-value="40">40 min</button>
+                        <button class="chip-option" data-value="60">1h</button>
+                    </div>
+                </div>
+
+                <button id="btn-iniciar-desafio-custom" class="btn-menu grande">
+                    Aceitar Desafio
+                </button>
+            </div>
+        </div>
+
+        <div id="tela-historico" class="oculto">
+            <div class="cabecalho-interno">
+                <button class="btn-voltar" id="btn-voltar-historico">⬅ Voltar</button>
+                <h2>Seus Resultados</h2>
+            </div>
+            <div id="lista-historico">
+                </div>
+        </div>
+
+        <header id="header-quiz" class="oculto">
+            <div class="topo-info">
+                <button id="btn-sair-quiz">✕ Sair</button>
+                <div id="timer">00:00</div>
+            </div>
+            <div id="progresso">Questão <span id="num-atual">1</span></div>
+        </header>
+
+        <main id="container-quiz" class="oculto">
+            <div id="categoria-tag">Carregando...</div>
+            <h2 id="pergunta">...</h2>
+            
+            <div id="opcoes" class="lista-opcoes"></div>
+
+            <div id="feedback" class="oculto">
+                <h3 id="titulo-feedback"></h3>
+                <p id="texto-explicacao"></p>
+                <button id="btn-proxima">Próxima Questão</button>
+            </div>
+        </main>
+
+        <div id="tela-resultado" class="oculto">
+            <h2>Resultado Final</h2>
+            <div class="placar">
+                <span id="pontuacao-final">0</span>
+                <small>de <span id="total-questoes">0</span></small>
+            </div>
+            <p id="mensagem-final">...</p>
+            <button id="btn-reiniciar">Voltar ao Menu</button>
+        </div>
+
+    </div>
+
+    <script type="module" src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js').catch(err => console.log(err));
+            });
+        }
+    </script>
+</body>
+</html>

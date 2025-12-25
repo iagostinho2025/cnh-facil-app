@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "categoria": "Legislação",
+    "enunciado": "O condutor que for pego dirigindo com a CNH vencida há mais de 30 dias estará cometendo uma infração:",
+    "imagem": null,
+    "alternativas": [
+      "Leve, com multa apenas.",
+      "Média, com retenção do veículo.",
+      "Grave, com apreensão da carteira.",
+      "Gravíssima, com multa e retenção do veículo."
+    ],
+    "correta": 3,
+    "explicacao": "Dirigir com CNH vencida há mais de 30 dias é infração gravíssima segundo o Art. 162 do CTB."
+  },
+  {
+    "id": 2,
+    "categoria": "Direção Defensiva",
+    "enunciado": "Ao dirigir sob chuva forte, para evitar a aquaplanagem, o condutor deve:",
+    "imagem": null,
+    "alternativas": [
+      "Acelerar para passar rápido pela água.",
+      "Reduzir a velocidade e aumentar a distância do veículo da frente.",
+      "Frear bruscamente assim que perceber a chuva.",
+      "Andar pelo acostamento."
+    ],
+    "correta": 1,
+    "explicacao": "Reduzir a velocidade e manter distância permite maior tempo de reação e evita a perda de contato dos pneus com o solo."
+  },
+  {
+    "id": 3,
+    "categoria": "Sinalização",
+    "enunciado": "Diante da placa de regulamentação 'PARE' (R-1), a atitude correta é:",
+    "imagem": "placa_pare.png",
+    "alternativas": [
+      "Reduzir a velocidade e passar devagar.",
+      "Imobilizar totalmente o veículo.",
+      "Buzinar e seguir em frente.",
+      "Apenas olhar os espelhos."
+    ],
+    "correta": 1,
+    "explicacao": "A placa PARE exige imobilização total (parada completa) do veículo antes de entrar na via."
+  },
+  {
+    "id": 4,
+    "categoria": "Mecânica Básica",
+    "enunciado": "Se a luz da temperatura acender no painel com o carro em movimento, isso indica:",
+    "imagem": null,
+    "alternativas": [
+      "Superaquecimento do motor.",
+      "Falta de combustível.",
+      "Pneus descalibrados.",
+      "Porta aberta."
+    ],
+    "correta": 0,
+    "explicacao": "Indica falha no sistema de arrefecimento. O motorista deve parar imediatamente para evitar fundir o motor."
+  },
+  {
+    "id": 5,
+    "categoria": "Primeiros Socorros",
+    "enunciado": "Em um acidente com motociclista, o capacete da vítima:",
+    "imagem": null,
+    "alternativas": [
+      "Deve ser removido imediatamente para facilitar a respiração.",
+      "Nunca deve ser removido por leigos, pois pode agravar lesões na coluna.",
+      "Deve ser retirado apenas se estiver folgado.",
+      "Deve ser girado para ver se o pescoço está quebrado."
+    ],
+    "correta": 1,
+    "explicacao": "Remover o capacete sem técnica adequada pode causar lesões irreversíveis na medula (paraplegia/tetraplegia)."
+  },
+  {
+    "id": 6,
+    "categoria": "Legislação",
+    "enunciado": "O uso do cinto de segurança é obrigatório para:",
+    "imagem": null,
+    "alternativas": [
+      "Apenas o condutor.",
+      "O condutor e o passageiro do banco da frente.",
+      "Condutor e passageiros, exceto gestantes.",
+      "Condutor e todos os passageiros, inclusive no banco de trás."
+    ],
+    "correta": 3,
+    "explicacao": "O cinto é obrigatório para todos os ocupantes do veículo em todas as vias do território nacional."
+  },
+  {
+    "id": 7,
+    "categoria": "Direção Defensiva",
+    "enunciado": "O que é 'distância de seguimento'?",
+    "imagem": null,
+    "alternativas": [
+      "A distância que você percorre após frear.",
+      "A distância segura que se deve manter do veículo da frente.",
+      "A distância total da viagem.",
+      "A distância entre o banco e o volante."
+    ],
+    "correta": 1,
+    "explicacao": "É a distância de segurança (geralmente regra dos 2 segundos) para evitar colisão traseira caso o veículo da frente pare bruscamente."
+  },
+  {
+    "id": 8,
+    "categoria": "Meio Ambiente",
+    "enunciado": "O catalisador é um equipamento que serve para:",
+    "imagem": null,
+    "alternativas": [
+      "Aumentar a potência do motor.",
+      "Reduzir a emissão de gases poluentes.",
+      "Resfriar a água do radiador.",
+      "Economizar combustível apenas."
+    ],
+    "correta": 1,
+    "explicacao": "O catalisador converte gases tóxicos resultantes da queima do combustível em gases menos nocivos."
+  },
+  {
+    "id": 9,
+    "categoria": "Legislação",
+    "enunciado": "Qual a validade máxima da CNH para condutores com menos de 50 anos?",
+    "imagem": null,
+    "alternativas": [
+      "5 anos.",
+      "10 anos.",
+      "3 anos.",
+      "Indeterminada."
+    ],
+    "correta": 1,
+    "explicacao": "Pela nova lei, condutores com menos de 50 anos têm CNH válida por 10 anos."
+  },
+  {
+    "id": 10,
+    "categoria": "Sinalização",
+    "enunciado": "A cor alaranjada na sinalização de trânsito geralmente indica:",
+    "imagem": null,
+    "alternativas": [
+      "Obras na pista.",
+      "Área escolar.",
+      "Hospital.",
+      "Lombada."
+    ],
+    "correta": 0,
+    "explicacao": "A sinalização de obras (temporária) utiliza as cores laranja e preto."
+  },
+  {
+    "id": 11,
+    "categoria": "Mecânica Básica",
+    "enunciado": "Para garantir a estabilidade e segurança, os pneus devem ser calibrados:",
+    "imagem": null,
+    "alternativas": [
+      "Uma vez por ano.",
+      "Apenas antes de viagens longas.",
+      "Semanalmente ou quinzenalmente, preferencialmente frios.",
+      "Quando estiverem visivelmente murchos."
+    ],
+    "correta": 2,
+    "explicacao": "A calibração frequente garante aderência e economia de combustível. Pneus quentes alteram a leitura da pressão."
+  },
+  {
+    "id": 12,
+    "categoria": "Direção Defensiva",
+    "enunciado": "Ofuscamento é a perda momentânea da visão causada por:",
+    "imagem": null,
+    "alternativas": [
+      "Chuva forte.",
+      "Excesso de luz (sol ou farol alto).",
+      "Fumaça na pista.",
+      "Cansaço do motorista."
+    ],
+    "correta": 1,
+    "explicacao": "Ofuscamento ocorre quando há excesso de luz nos olhos, prejudicando a visão."
+  },
+  {
+    "id": 13,
+    "categoria": "Legislação",
+    "enunciado": "Avançar o sinal vermelho do semáforo é infração:",
+    "imagem": null,
+    "alternativas": [
+      "Média.",
+      "Grave.",
+      "Gravíssima.",
+      "Leve."
+    ],
+    "correta": 2,
+    "explicacao": "Avançar sinal vermelho ou de parada obrigatória é infração gravíssima (7 pontos)."
+  },
+  {
+    "id": 14,
+    "categoria": "Primeiros Socorros",
+    "enunciado": "Qual o telefone nacional do SAMU (Serviço de Atendimento Móvel de Urgência)?",
+    "imagem": null,
+    "alternativas": [
+      "190",
+      "191",
+      "192",
+      "193"
+    ],
+    "correta": 2,
+    "explicacao": "192 é SAMU. (190 Polícia, 191 PRF, 193 Bombeiros)."
+  },
+  {
+    "id": 15,
+    "categoria": "Cidadania",
+    "enunciado": "É considerado comportamento correto e cidadão no trânsito:",
+    "imagem": null,
+    "alternativas": [
+      "Jogar lixo pela janela para não sujar o carro.",
+      "Dar preferência ao pedestre na faixa.",
+      "Buzinar sempre que o trânsito parar.",
+      "Ultrapassar pelo acostamento para aliviar o fluxo."
+    ],
+    "correta": 1,
+    "explicacao": "O respeito ao pedestre e aos mais vulneráveis é a base da cidadania no trânsito."
+  },
+  {
+    "id": 16,
+    "categoria": "Sinalização",
+    "enunciado": "Duas linhas contínuas amarelas no centro da pista indicam que:",
+    "imagem": null,
+    "alternativas": [
+      "É permitido ultrapassar nos dois sentidos.",
+      "É proibido ultrapassar nos dois sentidos.",
+      "A via é de mão única.",
+      "É permitido estacionar."
+    ],
+    "correta": 1,
+    "explicacao": "Linha contínua amarela dupla proíbe a ultrapassagem para ambos os fluxos."
+  },
+  {
+    "id": 17,
+    "categoria": "Mecânica Básica",
+    "enunciado": "A função do sistema de freios ABS é:",
+    "imagem": null,
+    "alternativas": [
+      "Fazer o carro parar instantaneamente.",
+      "Evitar o travamento das rodas, permitindo manter a direção.",
+      "Resfriar as pastilhas de freio.",
+      "Aumentar a velocidade do carro."
+    ],
+    "correta": 1,
+    "explicacao": "O ABS (Anti-lock Braking System) evita que as rodas travem em frenagens bruscas, mantendo o controle da direção."
+  },
+  {
+    "id": 18,
+    "categoria": "Legislação",
+    "enunciado": "Crianças com idade inferior a 10 anos que não tenham atingido 1,45m de altura devem ser transportadas:",
+    "imagem": null,
+    "alternativas": [
+      "No banco da frente com cinto.",
+      "No colo de um adulto no banco de trás.",
+      "No banco traseiro, em dispositivo de retenção (cadeirinha/assento) adequado.",
+      "Em qualquer lugar, desde que usem cinto."
+    ],
+    "correta": 2,
+    "explicacao": "O CTB exige o transporte no banco traseiro com o dispositivo adequado à idade/peso (bebê conforto, cadeirinha ou assento)."
+  },
+  {
+    "id": 19,
+    "categoria": "Direção Defensiva",
+    "enunciado": "A colisão misteriosa é aquela que:",
+    "imagem": null,
+    "alternativas": [
+      "Envolve apenas um veículo e não se sabe a causa exata (geralmente sono ou distração).",
+      "Ocorre em cruzamentos sinalizados.",
+      "Acontece com veículos estacionados.",
+      "Ninguém vê acontecer."
+    ],
+    "correta": 0,
+    "explicacao": "É o acidente que envolve apenas um veículo, sem testemunhas, cujas causas são incertas, mas frequentemente ligadas a falha humana."
+  },
+  {
+    "id": 20,
+    "categoria": "Sinalização",
+    "enunciado": "O sinal semafórico na cor amarela intermitente (piscando) indica:",
+    "imagem": null,
+    "alternativas": [
+      "Pare imediatamente.",
+      "Siga com rapidez.",
+      "Atenção, reduza a marcha e prossiga com cautela.",
+      "Proibido virar."
+    ],
+    "correta": 2,
+    "explicacao": "O amarelo intermitente serve de advertência/atenção, permitindo a passagem com cautela."
+  },
+  {
+    "id": 21,
+    "categoria": "Meio Ambiente",
+    "enunciado": "A emissão de fumaça preta pelo escapamento indica:",
+    "imagem": null,
+    "alternativas": [
+      "Motor regulado e econômico.",
+      "Queima incompleta de combustível e poluição excessiva.",
+      "Uso de combustível aditivado.",
+      "Funcionamento normal em dias frios."
+    ],
+    "correta": 1,
+    "explicacao": "Fumaça preta é sinal de mistura rica (muito combustível) e motor desregulado, causando alta poluição."
+  },
+  {
+    "id": 22,
+    "categoria": "Legislação",
+    "enunciado": "É permitido usar a buzina:",
+    "imagem": null,
+    "alternativas": [
+      "Para cumprimentar amigos na rua.",
+      "Para apressar o motorista da frente.",
+      "Em toques breves, como advertência para evitar acidentes.",
+      "Em áreas hospitalares à noite."
+    ],
+    "correta": 2,
+    "explicacao": "A buzina só deve ser usada em toques breves para advertências necessárias à segurança."
+  },
+  {
+    "id": 23,
+    "categoria": "Primeiros Socorros",
+    "enunciado": "Para sinalizar um acidente em via de 80km/h com pista seca, a que distância deve-se colocar o triângulo?",
+    "imagem": null,
+    "alternativas": [
+      "10 passos longos.",
+      "80 passos longos do acidente.",
+      "Colado na traseira do carro.",
+      "20 metros."
+    ],
+    "correta": 1,
+    "explicacao": "A regra prática é contar 1 passo longo para cada km/h da via. 80 km/h = 80 passos."
+  },
+  {
+    "id": 24,
+    "categoria": "Mecânica Básica",
+    "enunciado": "Qual peça é responsável por fornecer a centelha elétrica para queimar o combustível no motor?",
+    "imagem": null,
+    "alternativas": [
+      "Bateria.",
+      "Vela de ignição.",
+      "Radiador.",
+      "Pistão."
+    ],
+    "correta": 1,
+    "explicacao": "As velas de ignição geram a faísca que explode a mistura ar-combustível no motor."
+  },
+  {
+    "id": 25,
+    "categoria": "Legislação",
+    "enunciado": "Em uma rotatória não sinalizada, a preferência de passagem é:",
+    "imagem": null,
+    "alternativas": [
+      "De quem vem pela direita.",
+      "De quem está circulando pela rotatória.",
+      "De quem está mais rápido.",
+      "Dos ônibus."
+    ],
+    "correta": 1,
+    "explicacao": "No caso de rotatórias sem sinalização, a preferência é de quem já está circulando nela."
+  },
+  {
+    "id": 26,
+    "categoria": "Direção Defensiva",
+    "enunciado": "O principal causador de acidentes de trânsito é:",
+    "imagem": null,
+    "alternativas": [
+      "Falha mecânica.",
+      "Má conservação das vias.",
+      "Falha humana (imprudência, negligência ou imperícia).",
+      "Condições climáticas."
+    ],
+    "correta": 2,
+    "explicacao": "Estatísticas indicam que a falha humana é responsável pela grande maioria dos acidentes."
+  },
+  {
+    "id": 27,
+    "categoria": "Sinalização",
+    "enunciado": "A faixa de pedestres é uma sinalização:",
+    "imagem": null,
+    "alternativas": [
+      "Vertical.",
+      "Horizontal.",
+      "Sonora.",
+      "Luminosa."
+    ],
+    "correta": 1,
+    "explicacao": "Marcas no chão (pintura) são classificadas como sinalização horizontal."
+  },
+  {
+    "id": 28,
+    "categoria": "Legislação",
+    "enunciado": "Quantos pontos são registrados na CNH por uma infração Grave?",
+    "imagem": null,
+    "alternativas": [
+      "3 pontos.",
+      "4 pontos.",
+      "5 pontos.",
+      "7 pontos."
+    ],
+    "correta": 2,
+    "explicacao": "Leve = 3, Média = 4, Grave = 5, Gravíssima = 7."
+  },
+  {
+    "id": 29,
+    "categoria": "Mecânica Básica",
+    "enunciado": "O extintor de incêndio em automóveis de passeio atualmente é:",
+    "imagem": null,
+    "alternativas": [
+      "Item obrigatório.",
+      "Item facultativo (opcional).",
+      "Proibido.",
+      "Obrigatório apenas em rodovias."
+    ],
+    "correta": 1,
+    "explicacao": "Para carros de passeio, o uso do extintor tornou-se facultativo (mas se tiver, deve estar dentro da validade)."
+  },
+  {
+    "id": 30,
+    "categoria": "Direção Defensiva",
+    "enunciado": "A 'Hora do Rush' é um exemplo de condição adversa de:",
+    "imagem": null,
+    "alternativas": [
+      "Luz.",
+      "Tempo.",
+      "Trânsito.",
+      "Via."
+    ],
+    "correta": 2,
+    "explicacao": "Congestionamentos e fluxo intenso são condições adversas de trânsito."
+  }
+]
