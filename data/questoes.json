@@ -418,5 +418,275 @@
     ],
     "correta": 2,
     "explicacao": "Congestionamentos e fluxo intenso são condições adversas de trânsito."
+  },
+  {
+    "id": 31,
+    "categoria": "Legislação",
+    "enunciado": "A velocidade máxima permitida em rodovias de pista dupla, onde não houver sinalização regulamentadora, para automóveis, camionetas e motocicletas é de:",
+    "imagem": null,
+    "alternativas": ["80 km/h", "90 km/h", "100 km/h", "110 km/h"],
+    "correta": 3,
+    "explicacao": "Em rodovias de pista dupla, a máxima é 110 km/h para leves e 90 km/h para pesados."
+  },
+  {
+    "id": 32,
+    "categoria": "Direção Defensiva",
+    "enunciado": "Em caso de neblina ou cerração, o condutor deve:",
+    "imagem": null,
+    "alternativas": ["Acender o farol alto.", "Acender as luzes de posição (lanternas) e o farol baixo.", "Acelerar para sair logo da neblina.", "Parar na pista."],
+    "correta": 1,
+    "explicacao": "O farol baixo ou de neblina ajuda a ver e ser visto. O farol alto reflete na neblina e ofusca a visão (efeito parede branca)."
+  },
+  {
+    "id": 33,
+    "categoria": "Primeiros Socorros",
+    "enunciado": "Não é procedimento correto em caso de acidente de trânsito:",
+    "imagem": null,
+    "alternativas": ["Sinalizar o local.", "Chamar o resgate.", "Oferecer água ou alimentos para as vítimas.", "Manter a calma."],
+    "correta": 2,
+    "explicacao": "Nunca dê líquidos ou alimentos a vítimas de acidentes, pois elas podem precisar de cirurgia ou engasgar."
+  },
+  {
+    "id": 34,
+    "categoria": "Meio Ambiente",
+    "enunciado": "A poluição sonora no trânsito pode causar:",
+    "imagem": null,
+    "alternativas": ["Apenas desconforto auditivo.", "Estresse, irritabilidade e perda auditiva.", "Melhora na atenção do condutor.", "Nenhum problema de saúde."],
+    "correta": 1,
+    "explicacao": "Ruídos excessivos afetam a saúde física e mental, causando estresse e danos auditivos."
+  },
+  {
+    "id": 35,
+    "categoria": "Mecânica Básica",
+    "enunciado": "A finalidade do filtro de ar é:",
+    "imagem": null,
+    "alternativas": ["Filtrar o combustível.", "Reter as impurezas do ar que entra no motor.", "Resfriar o motor.", "Limpar o óleo do motor."],
+    "correta": 1,
+    "explicacao": "O filtro de ar impede que poeira e detritos entrem na câmara de combustão do motor."
+  },
+  {
+    "id": 36,
+    "categoria": "Legislação",
+    "enunciado": "Para conduzir veículo motorizado de 2 rodas (moto), o condutor deve ser habilitado na categoria:",
+    "imagem": null,
+    "alternativas": ["A", "B", "C", "D"],
+    "correta": 0,
+    "explicacao": "Categoria A é exclusiva para veículos motorizados de 2 ou 3 rodas."
+  },
+  {
+    "id": 37,
+    "categoria": "Sinalização",
+    "enunciado": "As placas de advertência têm a função de:",
+    "imagem": null,
+    "alternativas": ["Punir o condutor.", "Alertar sobre perigos ou condições da via.", "Indicar obrigações e proibições.", "Indicar distâncias."],
+    "correta": 1,
+    "explicacao": "Placas de advertência (amarelas) alertam para perigos potenciais (curvas, animais, escolas)."
+  },
+  {
+    "id": 38,
+    "categoria": "Direção Defensiva",
+    "enunciado": "O condutor defensivo deve manter as duas mãos no volante, exceto:",
+    "imagem": null,
+    "alternativas": ["Quando estiver cansado.", "Para fumar.", "Ao fazer trocas de marcha ou acionar equipamentos do veículo.", "Para falar ao celular."],
+    "correta": 2,
+    "explicacao": "Só é permitido tirar uma das mãos para operar comandos do veículo ou fazer gestos de braço."
+  },
+  {
+    "id": 39,
+    "categoria": "Legislação",
+    "enunciado": "Estacionar o veículo em frente a guia rebaixada (garagem) é infração:",
+    "imagem": null,
+    "alternativas": ["Leve.", "Média, com remoção do veículo.", "Grave.", "Gravíssima."],
+    "correta": 1,
+    "explicacao": "Estacionar onde houver guia rebaixada para entrada/saída de veículos é infração média (Art. 181, IX)."
+  },
+  {
+    "id": 40,
+    "categoria": "Cidadania",
+    "enunciado": "A preferência de passagem na faixa de pedestres, quando não houver semáforo, é:",
+    "imagem": null,
+    "alternativas": ["Do veículo, se estiver rápido.", "Do pedestre.", "De quem chegar primeiro.", "Das motocicletas."],
+    "correta": 1,
+    "explicacao": "Na faixa não semaforizada, a preferência é absoluta do pedestre."
+  },
+  {
+    "id": 41,
+    "categoria": "Mecânica Básica",
+    "enunciado": "O freio de estacionamento (freio de mão) atua geralmente:",
+    "imagem": null,
+    "alternativas": ["Nas rodas dianteiras.", "Nas quatro rodas.", "Nas rodas traseiras.", "No eixo cardã."],
+    "correta": 2,
+    "explicacao": "Na maioria dos carros, o freio de mão trava mecanicamente as rodas traseiras."
+  },
+  {
+    "id": 42,
+    "categoria": "Legislação",
+    "enunciado": "A CNH possui validade em:",
+    "imagem": null,
+    "alternativas": ["Apenas no estado onde foi emitida.", "Todo o território nacional.", "Apenas na cidade de residência.", "Países do Mercosul apenas."],
+    "correta": 1,
+    "explicacao": "A Carteira Nacional de Habilitação vale em todo o Brasil."
+  },
+  {
+    "id": 43,
+    "categoria": "Direção Defensiva",
+    "enunciado": "Em uma descida (serra), para economizar combustível e freios, deve-se:",
+    "imagem": null,
+    "alternativas": ["Descer em ponto morto (banguela).", "Desligar o motor.", "Descer engrenado, usando o freio motor.", "Pisar fundo no freio o tempo todo."],
+    "correta": 2,
+    "explicacao": "Descer engrenado economiza combustível (injeção eletrônica corta o fluxo) e poupa os freios (segurança)."
+  },
+  {
+    "id": 44,
+    "categoria": "Sinalização",
+    "enunciado": "O semáforo com luz vermelha intermitente (piscando) indica:",
+    "imagem": null,
+    "alternativas": ["Siga livremente.", "Pare o veículo (como uma placa PARE).", "Atenção.", "Semáforo quebrado."],
+    "correta": 1,
+    "explicacao": "Luz vermelha piscante tem valor de parada obrigatória. O condutor deve parar e só seguir se seguro."
+  },
+  {
+    "id": 45,
+    "categoria": "Legislação",
+    "enunciado": "Transitar pelo acostamento é permitido:",
+    "imagem": null,
+    "alternativas": ["Quando o trânsito está parado.", "Para ultrapassar veículos lentos.", "Apenas em situações de emergência ou para entrar em lotes lindeiros.", "Para motocicletas fugirem do congestionamento."],
+    "correta": 2,
+    "explicacao": "O acostamento é destinado a paradas de emergência e trânsito de pedestres/bicicletas, não para tráfego comum."
+  },
+  {
+    "id": 46,
+    "categoria": "Meio Ambiente",
+    "enunciado": "Jogar lixo na via pública é infração:",
+    "imagem": null,
+    "alternativas": ["Leve.", "Média.", "Grave.", "Não é infração, é falta de educação."],
+    "correta": 1,
+    "explicacao": "Atirar objetos do veículo é infração média (4 pontos)."
+  },
+  {
+    "id": 47,
+    "categoria": "Primeiros Socorros",
+    "enunciado": "O estado de choque em uma vítima pode ser identificado por:",
+    "imagem": null,
+    "alternativas": ["Rosto corado e quente.", "Pulso rápido e fraco, pele pálida e fria, suor frio.", "Fome excessiva.", "Euforia e alegria."],
+    "correta": 1,
+    "explicacao": "Esses são sinais clássicos de choque hipovolêmico (perda de sangue/líquidos) ou traumático."
+  },
+  {
+    "id": 48,
+    "categoria": "Legislação",
+    "enunciado": "Qual a pontuação para suspensão da CNH no período de 12 meses, se o condutor NÃO tiver infração gravíssima?",
+    "imagem": null,
+    "alternativas": ["20 pontos.", "30 pontos.", "40 pontos.", "50 pontos."],
+    "correta": 2,
+    "explicacao": "Pela nova lei: 40 pontos (sem gravíssima), 30 pontos (1 gravíssima), 20 pontos (2 ou mais gravíssimas)."
+  },
+  {
+    "id": 49,
+    "categoria": "Direção Defensiva",
+    "enunciado": "A distância de reação é aquela percorrida:",
+    "imagem": null,
+    "alternativas": ["Depois que o carro para.", "Entre ver o perigo e pisar no freio.", "Enquanto se freia o carro.", "Durante toda a viagem."],
+    "correta": 1,
+    "explicacao": "É o tempo que o cérebro leva para processar o perigo e dar a ordem ao pé."
+  },
+  {
+    "id": 50,
+    "categoria": "Mecânica Básica",
+    "enunciado": "O alternador serve para:",
+    "imagem": null,
+    "alternativas": ["Alternar as marchas.", "Gerar energia elétrica e carregar a bateria com o motor ligado.", "Resfriar a água.", "Filtrar o óleo."],
+    "correta": 1,
+    "explicacao": "O alternador transforma energia mecânica em elétrica, mantendo o carro ligado e carregando a bateria."
+  },
+  {
+    "id": 51,
+    "categoria": "Legislação",
+    "enunciado": "Usar o celular enquanto dirige, segurando ou manuseando, é infração:",
+    "imagem": null,
+    "alternativas": ["Média.", "Grave.", "Gravíssima.", "Leve."],
+    "correta": 2,
+    "explicacao": "Segurar ou manusear celular é gravíssima (7 pontos). Apenas falar (sem segurar) é média, mas manusear é o mais comum hoje."
+  },
+  {
+    "id": 52,
+    "categoria": "Sinalização",
+    "enunciado": "A faixa de trânsito destinada a ultrapassagem em pista de duplo sentido é:",
+    "imagem": null,
+    "alternativas": ["A da direita.", "A da esquerda.", "O acostamento.", "Qualquer uma."],
+    "correta": 1,
+    "explicacao": "A faixa da esquerda é destinada à ultrapassagem e ao deslocamento de veículos em maior velocidade."
+  },
+  {
+    "id": 53,
+    "categoria": "Cidadania",
+    "enunciado": "Ao passar por poças d'água, o condutor deve:",
+    "imagem": null,
+    "alternativas": ["Acelerar para molhar os pedestres.", "Reduzir a velocidade para não arremessar água nos pedestres.", "Frear bruscamente.", "Desviar pela contramão."],
+    "correta": 1,
+    "explicacao": "Arremessar água em pedestres é falta de cidadania e infração média."
+  },
+  {
+    "id": 54,
+    "categoria": "Legislação",
+    "enunciado": "O transporte de crianças em motocicletas é proibido para menores de:",
+    "imagem": null,
+    "alternativas": ["7 anos.", "8 anos.", "10 anos.", "12 anos."],
+    "correta": 2,
+    "explicacao": "A nova lei do CTB alterou a idade mínima para garupa de moto para 10 anos."
+  },
+  {
+    "id": 55,
+    "categoria": "Direção Defensiva",
+    "enunciado": "O cinto de segurança de 3 pontos é mais eficaz porque:",
+    "imagem": null,
+    "alternativas": ["É mais bonito.", "Prende o tórax e o quadril, evitando que o corpo seja projetado.", "É mais barato.", "Não amassa a roupa."],
+    "correta": 1,
+    "explicacao": "Ele distribui a força do impacto nas partes mais resistentes do corpo (tórax e bacia)."
+  },
+  {
+    "id": 56,
+    "categoria": "Mecânica Básica",
+    "enunciado": "O que significa a sigla IPVA?",
+    "imagem": null,
+    "alternativas": ["Imposto sobre Pneus e Veículos Automotores.", "Imposto sobre a Propriedade de Veículos Automotores.", "Índice de Poluição de Veículos.", "Imposto de Pista e Via Asfaltada."],
+    "correta": 1,
+    "explicacao": "É o imposto anual estadual sobre a propriedade do veículo."
+  },
+  {
+    "id": 57,
+    "categoria": "Legislação",
+    "enunciado": "Quando o condutor desobedecer às ordens emanadas da autoridade competente de trânsito (agente), comete infração:",
+    "imagem": null,
+    "alternativas": ["Leve.", "Média.", "Grave.", "Gravíssima."],
+    "correta": 2,
+    "explicacao": "Desobedecer ao agente de trânsito é infração grave (Art. 195)."
+  },
+  {
+    "id": 58,
+    "categoria": "Primeiros Socorros",
+    "enunciado": "Em caso de hemorragia externa (sangramento visível), deve-se:",
+    "imagem": null,
+    "alternativas": ["Fazer torniquete no pescoço.", "Comprimir o local com pano limpo.", "Jogar pó de café.", "Deixar sangrar para limpar a ferida."],
+    "correta": 1,
+    "explicacao": "A compressão direta é a forma mais segura e eficaz de estancar a maioria das hemorragias externas."
+  },
+  {
+    "id": 59,
+    "categoria": "Sinalização",
+    "enunciado": "Marcas no pavimento (chão) que separam fluxos de trânsito de sentidos opostos são da cor:",
+    "imagem": null,
+    "alternativas": ["Branca.", "Amarela.", "Vermelha.", "Azul."],
+    "correta": 1,
+    "explicacao": "Faixa Amarela = Duplo sentido (vai e vem). Faixa Branca = Sentido único (todos vão)."
+  },
+  {
+    "id": 60,
+    "categoria": "Direção Defensiva",
+    "enunciado": "A aquaplanagem acontece pela perda de aderência do pneu com o solo devido a:",
+    "imagem": null,
+    "alternativas": ["Óleo na pista.", "Camada de água na pista e velocidade incompatível.", "Areia na pista.", "Pneus novos."],
+    "correta": 1,
+    "explicacao": "Aquaplanagem é o pneu flutuando na água. Causas: excesso de água, alta velocidade e pneus carecas."
   }
 ]
