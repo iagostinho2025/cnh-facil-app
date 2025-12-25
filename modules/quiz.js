@@ -1,6 +1,6 @@
 let indiceAtual = 0;
 let listaQuestoes = [];
-let questoesErradas = []; // <--- NOVO: Lista para guardar os erros
+let questoesErradas = [];
 let pontos = 0;
 let tempoRestante = 0;
 let intervaloRelogio = null;
@@ -24,10 +24,10 @@ export function iniciarQuiz(questoes, config = {}) {
 
     modoAtualLabel = cfg.modoLabel;
 
-    // Se NÃO for revisão de erros, embaralha. Se for revisão, mantém a ordem que veio.
+    // Lógica de Embaralhamento ou Revisão
     let listaFinal = [];
     if (cfg.modoLabel.includes("Revisão")) {
-        listaFinal = questoes; // Já vem filtrada
+        listaFinal = questoes; // Na revisão, mantemos a lista de erros original
     } else {
         let embaralhada = questoes.sort(() => Math.random() - 0.5);
         if (cfg.modoSimulado) {
@@ -42,14 +42,13 @@ export function iniciarQuiz(questoes, config = {}) {
 
     if(listaQuestoes.length === 0) { alert("Sem questões!"); return; }
 
-    // Reset Variáveis
+    // Reset
     indiceAtual = 0;
     pontos = 0;
-    questoesErradas = []; // <--- Zera a lista de erros
+    questoesErradas = [];
 
-    if (elTimer.parentElement) {
-        elTimer.parentElement.style.display = 'flex';
-    }
+    // Setup Visual
+    if (elTimer.parentElement) elTimer.parentElement.style.display = 'flex';
 
     if (cfg.tempoMinutos > 0) {
         tempoRestante = cfg.tempoMinutos * 60;
@@ -64,6 +63,7 @@ export function iniciarQuiz(questoes, config = {}) {
     elContainer.classList.remove('oculto');
     mostrarQuestao();
 
+    // Botões de Controle
     const btnProxima = document.getElementById('btn-proxima');
     const novoBtnProxima = btnProxima.cloneNode(true);
     btnProxima.parentNode.replaceChild(novoBtnProxima, btnProxima);
@@ -71,11 +71,7 @@ export function iniciarQuiz(questoes, config = {}) {
 
     document.getElementById('btn-reiniciar').onclick = () => window.location.reload();
 
-    // Lógica Compartilhar e Sair (mantida igual)
-    const btnShare = document.getElementById('btn-compartilhar');
-    if (btnShare) {
-        btnShare.onclick = async () => { /* ... lógica de share ... */ };
-    }
+    // Botão Sair
     const btnSair = document.getElementById('btn-sair-quiz');
     if (btnSair) {
         btnSair.onclick = () => { if(confirm("Sair do simulado?")) window.location.reload(); };
@@ -102,7 +98,7 @@ function mostrarQuestao() {
         elPerg.parentNode.insertBefore(img, elPerg.nextSibling);
     }
 
-    // Embaralha alternativas
+    // Embaralha alternativas visualmente
     let opcoesMapeadas = q.alternativas.map((texto, index) => {
         return { texto: texto, indexOriginal: index };
     });
@@ -113,7 +109,7 @@ function mostrarQuestao() {
         btn.className = 'botao-opcao'; 
         btn.textContent = item.texto;
         btn.dataset.originalId = item.indexOriginal;
-        btn.onclick = () => verificarResposta(item.indexOriginal, q.correta, btn, q); // Passamos a questão 'q'
+        btn.onclick = () => verificarResposta(item.indexOriginal, q.correta, btn, q);
         elOpcoes.appendChild(btn);
     });
 }
@@ -136,8 +132,6 @@ function verificarResposta(indexOriginalEscolha, indexCorreto, btnClicado, quest
         btnClicado.classList.add('errado');
         tituloFeedback.textContent = "❌ Incorreto";
         tituloFeedback.style.color = "var(--error)";
-        
-        // <--- SALVA O ERRO PARA O HISTÓRICO
         questoesErradas.push(questaoObjeto);
     }
 
@@ -155,7 +149,7 @@ function proximaQuestao() {
     }
 }
 
-function iniciarRelogio() { /* ... igual ... */ 
+function iniciarRelogio() {
     atualizarDisplay();
     if(intervaloRelogio) clearInterval(intervaloRelogio);
     intervaloRelogio = setInterval(() => {
@@ -168,7 +162,7 @@ function iniciarRelogio() { /* ... igual ... */
     }, 1000);
 }
 
-function atualizarDisplay() { /* ... igual ... */ 
+function atualizarDisplay() {
     const min = Math.floor(tempoRestante / 60).toString().padStart(2, '0');
     const seg = (tempoRestante % 60).toString().padStart(2, '0');
     elTimer.textContent = `${min}:${seg}`;
@@ -191,11 +185,10 @@ function finalizarQuiz(timeout = false) {
     document.getElementById('total-questoes').textContent = total;
 
     let aprovado = false;
-    // Se for modo revisão, a mensagem é diferente
     if (modoAtualLabel.includes("Revisão")) {
         msg.innerHTML = "📝 <strong>Revisão Concluída!</strong>";
         msg.style.color = "var(--primary)";
-        aprovado = true; // Revisão não reprova
+        aprovado = true;
     } else if (timeout) {
         msg.innerHTML = "⏰ <strong>Tempo Esgotado!</strong>";
         msg.style.color = "var(--error)";
@@ -208,10 +201,37 @@ function finalizarQuiz(timeout = false) {
         msg.style.color = "var(--error)";
     }
 
-    // Só salva histórico se NÃO for revisão de erros (para não poluir)
     if (!modoAtualLabel.includes("Revisão")) {
         salvarHistorico(pontos, total, aprovado);
     }
+
+    // --- CORREÇÃO DO BOTÃO COMPARTILHAR ---
+    // Configura o botão AGORA, quando já temos o resultado final
+    const btnShare = document.getElementById('btn-compartilhar');
+    
+    // Clona para limpar eventos antigos e garantir frescor
+    const novoBtnShare = btnShare.cloneNode(true);
+    btnShare.parentNode.replaceChild(novoBtnShare, btnShare);
+
+    novoBtnShare.onclick = async () => {
+        const shareData = {
+            title: 'CNH Fácil',
+            text: `Fiz o simulado CNH Fácil e acertei ${pontos} de ${total} questões! 🚗💨 Tente superar meu placar!`,
+            url: window.location.href // Vai pegar a imagem das meta tags
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                // Fallback para PC
+                await navigator.clipboard.writeText(window.location.href);
+                alert("Link copiado! (Compartilhamento nativo indisponível no PC)");
+            }
+        } catch (err) {
+            console.log('Compartilhamento cancelado ou erro:', err);
+        }
+    };
 }
 
 function salvarHistorico(pts, tot, apr) {
@@ -222,7 +242,7 @@ function salvarHistorico(pts, tot, apr) {
         pontos: pts,
         total: tot,
         aprovado: apr,
-        listaErros: questoesErradas // <--- AQUI ESTÁ O OURO! Salvamos os erros.
+        listaErros: questoesErradas
     };
     const hist = JSON.parse(localStorage.getItem('cnh_facil_historico_v1') || '[]');
     hist.unshift(item);
