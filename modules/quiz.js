@@ -26,7 +26,7 @@ export function iniciarQuiz(questoes, config = {}) {
 
     modoAtualLabel = cfg.modoLabel;
 
-    // Preparar Questões
+    // Preparar Questões (Embaralha a ordem das perguntas)
     let embaralhada = questoes.sort(() => Math.random() - 0.5);
     
     if (cfg.modoSimulado) {
@@ -42,8 +42,7 @@ export function iniciarQuiz(questoes, config = {}) {
     indiceAtual = 0;
     pontos = 0;
 
-    // --- CORREÇÃO DO BOTÃO SAIR (Mantendo o layout) ---
-    // Garante que a barra superior (pai do timer) esteja visível
+    // --- CORREÇÃO DO BOTÃO SAIR ---
     if (elTimer.parentElement) {
         elTimer.parentElement.style.display = 'flex';
     }
@@ -52,10 +51,10 @@ export function iniciarQuiz(questoes, config = {}) {
     if (cfg.tempoMinutos > 0) {
         tempoRestante = cfg.tempoMinutos * 60;
         iniciarRelogio();
-        elTimer.style.display = 'block'; // Mostra o relógio
+        elTimer.style.display = 'block'; 
     } else {
         clearInterval(intervaloRelogio);
-        elTimer.style.display = 'none'; // Esconde APENAS o relógio, mantém o botão Sair
+        elTimer.style.display = 'none'; 
     }
 
     // Mostrar Tela
@@ -63,7 +62,7 @@ export function iniciarQuiz(questoes, config = {}) {
     elContainer.classList.remove('oculto');
     mostrarQuestao();
 
-    // Botões de Controle (Evita duplicar eventos)
+    // Botões de Controle
     const btnProxima = document.getElementById('btn-proxima');
     const novoBtnProxima = btnProxima.cloneNode(true);
     btnProxima.parentNode.replaceChild(novoBtnProxima, btnProxima);
@@ -119,40 +118,65 @@ function mostrarQuestao() {
         const img = document.createElement('img');
         img.id = 'imagem-quiz';
         img.src = './assets/images/' + q.imagem;
-        // Se houver classe específica no seu CSS para imagem, ela já será aplicada pelo ID ou tag
         elPerg.parentNode.insertBefore(img, elPerg.nextSibling);
     }
 
-    // Opções
-    q.alternativas.forEach((texto, idx) => {
+    // --- A MÁGICA DO EMBARALHAMENTO ACONTECE AQUI ---
+    
+    // 1. Criamos um array de objetos guardando o texto e o índice original
+    // Ex: [{texto: "Resp A", id: 0}, {texto: "Resp B", id: 1}, ...]
+    let opcoesMapeadas = q.alternativas.map((texto, index) => {
+        return { texto: texto, indexOriginal: index };
+    });
+
+    // 2. Misturamos esse array
+    opcoesMapeadas.sort(() => Math.random() - 0.5);
+
+    // 3. Criamos os botões baseados nessa mistura
+    opcoesMapeadas.forEach((item) => {
         const btn = document.createElement('button');
-        // VOLTEI PARA O NOME ORIGINAL: 'botao-opcao'
-        // Assim ele pega o estilo do seu CSS original
-        btn.className = 'botao-opcao'; 
-        btn.textContent = texto;
-        btn.onclick = () => verificarResposta(idx, q.correta);
+        btn.className = 'botao-opcao'; // Mantém seu CSS original
+        btn.textContent = item.texto;
+        
+        // Guardamos o ID original no botão para checar depois
+        btn.dataset.originalId = item.indexOriginal;
+
+        // Ao clicar, mandamos o ID original (que veio do JSON) para verificar
+        btn.onclick = () => verificarResposta(item.indexOriginal, q.correta, btn);
+        
         elOpcoes.appendChild(btn);
     });
 }
 
-function verificarResposta(idxEscolha, idxCorreto) {
+function verificarResposta(indexOriginalEscolha, indexCorreto, btnClicado) {
+    // Trava todos os botões
     const btns = elOpcoes.querySelectorAll('button');
-    btns.forEach(b => b.disabled = true);
-
-    if (idxEscolha === idxCorreto) {
-        // VOLTEI PARA A CLASSE ORIGINAL: 'correto'
-        btns[idxEscolha].classList.add('correto');
+    btns.forEach(b => {
+        b.disabled = true;
         
-        const tituloFeedback = document.getElementById('titulo-feedback');
+        // --- NOVA LÓGICA VISUAL ---
+        // Como embaralhamos, não podemos usar o índice do array [i].
+        // Temos que olhar o "data-original-id" que guardamos no botão.
+        const idDoBotao = parseInt(b.dataset.originalId);
+
+        // Se este botão for a resposta certa (mesmo que não tenha clicado nele), marca de verde
+        if (idDoBotao === indexCorreto) {
+            b.classList.add('correto');
+        }
+    });
+
+    // Feedback Visual e Texto
+    const tituloFeedback = document.getElementById('titulo-feedback');
+    
+    if (indexOriginalEscolha === indexCorreto) {
+        // O botão clicado já ficou verde pelo loop acima, só atualizamos o texto
         tituloFeedback.textContent = "✅ Correto!";
-        tituloFeedback.style.color = "var(--success)"; // Mantendo variável CSS se existir, ou use cor fixa
+        tituloFeedback.style.color = "var(--success)"; 
         pontos++;
     } else {
-        // VOLTEI PARA AS CLASSES ORIGINAIS: 'errado' e 'correto'
-        btns[idxEscolha].classList.add('errado');
-        btns[idxCorreto].classList.add('correto');
+        // Se errou, pinta o clicado de vermelho
+        btnClicado.classList.add('errado');
         
-        const tituloFeedback = document.getElementById('titulo-feedback');
         tituloFeedback.textContent = "❌ Incorreto";
         tituloFeedback.style.color = "var(--error)";
     }
@@ -160,7 +184,6 @@ function verificarResposta(idxEscolha, idxCorreto) {
     document.getElementById('texto-explicacao').textContent = listaQuestoes[indiceAtual].explicacao;
     elFeedback.classList.remove('oculto');
     
-    // Scroll suave
     elFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
@@ -191,13 +214,12 @@ function atualizarDisplay() {
     const seg = (tempoRestante % 60).toString().padStart(2, '0');
     elTimer.textContent = `${min}:${seg}`;
     
-    if (tempoRestante < 60) elTimer.classList.add('perigo'); // Mantive a classe 'perigo' original se houver
+    if (tempoRestante < 60) elTimer.classList.add('perigo'); 
     else elTimer.classList.remove('perigo');
 }
 
 function finalizarQuiz(timeout = false) {
     clearInterval(intervaloRelogio);
-    // Esconde a barra do topo no final
     if(elTimer.parentElement) elTimer.parentElement.style.display = 'none';
 
     elContainer.classList.add('oculto');
@@ -213,7 +235,7 @@ function finalizarQuiz(timeout = false) {
     let aprovado = false;
     if (timeout) {
         msg.innerHTML = "⏰ <strong>Tempo Esgotado!</strong>";
-        msg.style.color = "var(--error)"; // Usei var(--error) que estava no seu código
+        msg.style.color = "var(--error)"; 
     } else if (perc >= 70) {
         msg.innerHTML = "🎉 <strong>PARABÉNS! Aprovado!</strong> 🚗💨";
         msg.style.color = "var(--success)";
