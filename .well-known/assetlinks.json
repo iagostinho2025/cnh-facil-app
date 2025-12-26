@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "br.com.mibdigital.cnh.twa",
+      "sha256_cert_fingerprints":
+      ["DA:BE:F4:51:90:97:4A:2D:8F:76:57:97:C6:3A:34:76:41:6D:4D:36:31:6B:64:53:C9:70:2F:AF:CA:F8:58:5F"]
+    }
+  }
+]
