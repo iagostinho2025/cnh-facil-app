@@ -22,6 +22,8 @@ Aplicativo web (PWA) desenvolvido para auxiliar estudantes na preparação para 
 2. Abra o arquivo `index.html` no navegador.
 3. Para testar o modo offline, é necessário servir via HTTPS ou localhost.
 
-## 📄 Aviso Legal
+## ⚠️ Aviso Legal
 
-Este aplicativo é um projeto educacional e não possui vínculo oficial com o Detran.
+Este aplicativo é uma ferramenta educacional independente e **não possui vínculo oficial, endosso ou certificação** de órgãos como Detran, Contran ou qualquer entidade de trânsito.
+
+O conteúdo é baseado no Código de Trânsito Brasileiro (CTB), mas não garante aprovação em exames oficiais. Use como complemento aos seus estudos.

@@ -1,7 +1,7 @@
 {
   "name": "CNH Fácil - Simulado e Estudo",
   "short_name": "CNH Fácil",
-  "description": "Estude para a prova teórica do Detran com simulados e desafios.",
+  "description": "Ferramenta educacional com questões de trânsito baseadas no CTB. Simulados, estudo por tema e modo desafio. Não possui vínculo oficial com Detran.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f8fafc",

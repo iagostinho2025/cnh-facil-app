@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CNH Fácil - App</title>
+    <title>CNH Fácil – Simulados e Estudo</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#4f46e5">
-	<meta property="og:title" content="CNH Fácil - Simulado Detran">
-    <meta property="og:description" content="Estude para a prova teórica com simulados, modo desafio e histórico de desempenho.">
+	<meta property="og:title" content="CNH Fácil – Simulados e Estudo">
+    <meta property="og:description" content="Ferramenta educacional com questões de trânsito para estudo e prática. Conteúdo baseado no CTB. Não possui vínculo oficial com Detran.">
     <meta property="og:image" content="https://cnh-facil-app.vercel.app/assets/icons/icon-512.png"> <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
@@ -25,7 +25,7 @@
         <div id="tela-inicial">
             <div class="logo-area">
                 <h1>🚗 CNH Fácil</h1>
-                <p>Seu instrutor de bolso</p>
+                <p>Ferramenta de estudo para CNH</p>
             </div>
             
             <button id="btn-simulado" class="btn-menu grande">
@@ -51,6 +51,10 @@
                     Termos de Uso e Privacidade
                 </button>
             </div>
+
+            <div style="margin-top: 10px; padding: 15px; background: #fef3c7; border-radius: 8px; font-size: 0.75rem; color: #92400e; line-height: 1.4;">
+                ⚠️ <strong>Aviso:</strong> Este aplicativo é educacional e não possui vínculo com Detran ou órgãos oficiais. Não garante aprovação em exames.
+            </div>
         </div>
 
         <div id="tela-intro-simulado" class="oculto">
@@ -62,12 +66,12 @@
                 <div id="briefing-icon" style="background: #e0e7ff; color: #4f46e5;">📝</div>
                 
                 <h2>Simulado Completo</h2>
-                <p style="margin-bottom: 20px;">Teste seus conhecimentos com questões elaboradas com base no CTB.</p>
-                
+                <p style="margin-bottom: 20px;">Pratique com questões baseadas no Código de Trânsito Brasileiro (CTB).</p>
+
                 <ul style="text-align: left; color: #64748b; margin-bottom: 30px; list-style: none; padding: 0;">
                     <li style="margin-bottom: 10px;">✅ <strong>30 Questões</strong> sorteadas aleatoriamente.</li>
                     <li style="margin-bottom: 10px;">⏱️ <strong>40 Minutos</strong> de tempo limite.</li>
-                    <li>🎯 Precisa de <strong>21 acertos</strong> (70%) para passar.</li>
+                    <li>🎯 Critério de aprovação: <strong>21 acertos</strong> (70%).</li>
                 </ul>
 
                 <button id="btn-iniciar-simulado-real" class="btn-menu grande">
@@ -75,7 +79,7 @@
                 </button>
 
                 <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 25px; border-top: 1px solid #f1f5f9; padding-top: 15px;">
-                    Este aplicativo é estritamente educativo e não possui vínculo com o Detran. As questões são autorais.
+                    ⚠️ Este aplicativo é uma ferramenta educacional independente. Não possui vínculo, endosso ou certificação de órgãos oficiais como Detran ou Contran. As questões são autorais e baseadas no CTB.
                 </p>
             </div>
         </div>
@@ -194,23 +198,38 @@
             
             <div class="conteudo-texto">
                 <h3>1. Termos de Uso (Isenção de Responsabilidade)</h3>
-                <p>O aplicativo <strong>CNH Fácil</strong> é uma ferramenta de estudo complementar e não oficial. Embora nos esforcemos para manter as questões atualizadas com base no Código de Trânsito Brasileiro (CTB), <strong>não garantimos</strong> que o conteúdo reflete exatamente as questões da prova oficial do Detran de seu estado.</p>
-                <p>O uso deste aplicativo não garante a aprovação no exame teórico. O desenvolvedor não se responsabiliza por reprovações, taxas de reteste ou quaisquer danos diretos ou indiretos decorrentes do uso deste software.</p>
+                <p>O aplicativo <strong>CNH Fácil</strong> é uma ferramenta educacional independente, sem vínculo oficial com Detran, Contran ou qualquer órgão de trânsito.</p>
+                <p>As questões são autorais e baseadas no Código de Trânsito Brasileiro (CTB) vigente. Embora o conteúdo seja elaborado com cuidado, <strong>não garantimos</strong> que as questões refletem exatamente as utilizadas nas provas oficiais.</p>
+                <p><strong>Este aplicativo não certifica, aprova ou garante aprovação</strong> no exame teórico de habilitação. O uso desta ferramenta é por sua conta e risco. O desenvolvedor não se responsabiliza por reprovações, custos de reteste ou quaisquer danos diretos ou indiretos.</p>
 
                 <h3>2. Política de Privacidade</h3>
-                <p>Respeitamos sua privacidade. Este aplicativo:</p>
+                <p><strong>Última atualização:</strong> 20 de Janeiro de 2026</p>
+                <p>Levamos sua privacidade a sério. Este aplicativo:</p>
                 <ul>
-                    <li>Não coleta dados pessoais (nome, email, telefone).</li>
-                    <li>Não utiliza geolocalização (GPS).</li>
-                    <li>Não compartilha informações com terceiros.</li>
+                    <li><strong>Não coleta</strong> dados pessoais (nome, CPF, e-mail, telefone, endereço).</li>
+                    <li><strong>Não utiliza</strong> rastreamento de localização (GPS).</li>
+                    <li><strong>Não requer</strong> cadastro, login ou senha.</li>
+                    <li><strong>Não compartilha</strong> informações com terceiros.</li>
+                    <li><strong>Não utiliza</strong> cookies de rastreamento ou análise.</li>
                 </ul>
-                <p>Todo o progresso e histórico de simulados são salvos localmente na memória do seu dispositivo. Se você desinstalar o aplicativo ou limpar os dados, esse histórico será perdido.</p>
 
-                <h3>3. Direitos Autorais</h3>
-                <p>O código-fonte e o design deste aplicativo são propriedade intelectual do desenvolvedor. As questões são de domínio público ou baseadas na legislação vigente.</p>
-                
+                <h4>Armazenamento Local</h4>
+                <p>O aplicativo utiliza <strong>LocalStorage</strong> (armazenamento local do navegador) para salvar:</p>
+                <ul>
+                    <li>Histórico de simulados realizados (pontuações, datas).</li>
+                    <li>Preferências de configuração do usuário.</li>
+                </ul>
+                <p>Esses dados permanecem <strong>apenas no seu dispositivo</strong> e não são enviados para servidores externos. Se você desinstalar o aplicativo ou limpar os dados do navegador, essas informações serão perdidas permanentemente.</p>
+
+                <h4>Funcionamento Offline</h4>
+                <p>Este aplicativo é um <strong>Progressive Web App (PWA)</strong> e funciona completamente offline após o primeiro carregamento. Nenhuma conexão com a internet é necessária para usar as funcionalidades principais.</p>
+
+                <h3>3. Propriedade Intelectual</h3>
+                <p>O código-fonte, design e questões deste aplicativo são de propriedade do desenvolvedor. As questões são autorais ou baseadas em legislação de domínio público (CTB).</p>
+
                 <h3>4. Contato</h3>
-                <p>Para reportar erros nas questões ou sugerir melhorias, entre em contato com o suporte.</p>
+                <p>Para reportar problemas, sugerir melhorias ou esclarecer dúvidas sobre privacidade:</p>
+                <p><strong>E-mail:</strong> <a href="mailto:mibdigital.contato@gmail.com" style="color: #4f46e5;">mibdigital.contato@gmail.com</a></p>
                 
                 <br>
                 <p style="font-size: 0.8rem; color: #cbd5e1; text-align: center;">Versão 1.0.0 • CNH Fácil</p>
