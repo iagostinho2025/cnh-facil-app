@@ -61,7 +61,7 @@ const modalTexto = document.getElementById('modal-confirmacao-texto');
 const btnModalCancelar = document.getElementById('btn-modal-cancelar');
 const btnModalConfirmar = document.getElementById('btn-modal-confirmar');
 
-function abrirConfirmacaoSaida(texto = "Seu progresso sera perdido.") {
+function abrirConfirmacaoSaida(texto = "Seu progresso será perdido.") {
     return new Promise((resolve) => {
         modalTexto.textContent = texto;
         modalConfirmacao.classList.remove('oculto');
@@ -143,7 +143,7 @@ function quizEstaAtivo() {
 window.addEventListener('popstate', async (event) => {
     // Se o quiz está ativo, perguntar antes de sair
     if (quizEstaAtivo()) {
-        const querSair = await abrirConfirmacaoSaida("Seu progresso sera perdido.");
+        const querSair = await abrirConfirmacaoSaida("Seu progresso será perdido.");
         if (querSair) {
             // Confirma saída: recarrega para resetar tudo
             window.location.reload();
@@ -281,7 +281,7 @@ function setupEventos() {
 
     // Botão Sair do Quiz
     btnSairQuiz.onclick = async () => {
-        const querSair = await abrirConfirmacaoSaida("Seu progresso sera perdido.");
+        const querSair = await abrirConfirmacaoSaida("Seu progresso será perdido.");
         if (querSair) {
             window.location.reload();
         }

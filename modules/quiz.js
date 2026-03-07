@@ -76,7 +76,7 @@ export function iniciarQuiz(questoes, config = {}) {
     if (btnSair) {
         btnSair.onclick = async () => {
             if (typeof window.confirmarSaidaQuiz === 'function') {
-                const querSair = await window.confirmarSaidaQuiz("Seu progresso sera perdido.");
+                const querSair = await window.confirmarSaidaQuiz("Seu progresso será perdido.");
                 if (querSair) window.location.reload();
             }
         };
