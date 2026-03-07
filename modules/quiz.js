@@ -74,7 +74,12 @@ export function iniciarQuiz(questoes, config = {}) {
     // Botão Sair
     const btnSair = document.getElementById('btn-sair-quiz');
     if (btnSair) {
-        btnSair.onclick = () => { if(confirm("Sair do simulado?")) window.location.reload(); };
+        btnSair.onclick = async () => {
+            if (typeof window.confirmarSaidaQuiz === 'function') {
+                const querSair = await window.confirmarSaidaQuiz("Seu progresso sera perdido.");
+                if (querSair) window.location.reload();
+            }
+        };
     }
 }
 

@@ -49,12 +49,44 @@ const btnIniciarDesafioCustom = document.getElementById('btn-iniciar-desafio-cus
 const btnSairQuiz = document.getElementById('btn-sair-quiz');
 const btnRefazerErros = document.getElementById('btn-refazer-erros');
 
-const selectTema = document.getElementById('setup-tema');
 let bancoDeQuestoes = [];
 let temaSelecionadoTemp = null;
+let temaSelecionadoDesafio = 'todos';
 let desafioQtd = 30;
 let desafioTempo = 40;
 let errosParaRefazer = [];
+
+const modalConfirmacao = document.getElementById('modal-confirmacao');
+const modalTexto = document.getElementById('modal-confirmacao-texto');
+const btnModalCancelar = document.getElementById('btn-modal-cancelar');
+const btnModalConfirmar = document.getElementById('btn-modal-confirmar');
+
+function abrirConfirmacaoSaida(texto = "Seu progresso sera perdido.") {
+    return new Promise((resolve) => {
+        modalTexto.textContent = texto;
+        modalConfirmacao.classList.remove('oculto');
+        document.body.style.overflow = 'hidden';
+
+        const fechar = (confirmado) => {
+            modalConfirmacao.classList.add('oculto');
+            document.body.style.overflow = '';
+            btnModalCancelar.onclick = null;
+            btnModalConfirmar.onclick = null;
+            modalConfirmacao.onclick = null;
+            resolve(confirmado);
+        };
+
+        btnModalCancelar.onclick = () => fechar(false);
+        btnModalConfirmar.onclick = () => fechar(true);
+        modalConfirmacao.onclick = (event) => {
+            if (event.target === modalConfirmacao) {
+                fechar(false);
+            }
+        };
+    });
+}
+
+window.confirmarSaidaQuiz = abrirConfirmacaoSaida;
 
 // ==================== SISTEMA DE NAVEGAÇÃO COM HISTORY API ====================
 
@@ -108,10 +140,11 @@ function quizEstaAtivo() {
 /**
  * Lida com o evento popstate (botão voltar do navegador/Android)
  */
-window.addEventListener('popstate', (event) => {
+window.addEventListener('popstate', async (event) => {
     // Se o quiz está ativo, perguntar antes de sair
     if (quizEstaAtivo()) {
-        if (confirm("Sair do simulado? Seu progresso será perdido.")) {
+        const querSair = await abrirConfirmacaoSaida("Seu progresso sera perdido.");
+        if (querSair) {
             // Confirma saída: recarrega para resetar tudo
             window.location.reload();
         } else {
@@ -140,14 +173,10 @@ async function init() {
         bancoDeQuestoes = await resposta.json();
 
         const temasUnicos = [...new Set(bancoDeQuestoes.map(q => q.categoria))];
-        temasUnicos.forEach(tema => {
-            const option = document.createElement('option');
-            option.value = tema;
-            option.textContent = tema;
-            selectTema.appendChild(option);
-        });
+        popularTemasDesafio(temasUnicos);
 
         setupEventos();
+        setupChips('setup-tema-container', val => temaSelecionadoDesafio = val);
         setupChips('setup-qtd-container', val => desafioQtd = parseInt(val));
         setupChips('setup-tempo-container', val => desafioTempo = parseInt(val));
 
@@ -224,7 +253,7 @@ function setupEventos() {
     };
 
     btnIniciarDesafioCustom.onclick = () => {
-        const temaEscolhido = selectTema.value;
+        const temaEscolhido = temaSelecionadoDesafio;
         let pool = (temaEscolhido === 'todos') ? bancoDeQuestoes : bancoDeQuestoes.filter(q => q.categoria === temaEscolhido);
         esconderTelas();
         telas.headerQuiz.classList.remove('oculto');
@@ -251,8 +280,9 @@ function setupEventos() {
     };
 
     // Botão Sair do Quiz
-    btnSairQuiz.onclick = () => {
-        if(confirm("Sair do simulado? Seu progresso será perdido.")) {
+    btnSairQuiz.onclick = async () => {
+        const querSair = await abrirConfirmacaoSaida("Seu progresso sera perdido.");
+        if (querSair) {
             window.location.reload();
         }
     };
@@ -293,6 +323,21 @@ function setupChips(id, callback) {
             callback(btn.dataset.value);
         };
     });
+}
+
+function popularTemasDesafio(temas) {
+    const container = document.getElementById('setup-tema-container');
+    const botaoTodos = container.querySelector('[data-value="todos"]');
+    temas.forEach(tema => {
+        const btn = document.createElement('button');
+        btn.className = 'chip-option';
+        btn.dataset.value = tema;
+        btn.textContent = tema;
+        container.appendChild(btn);
+    });
+    if (botaoTodos) {
+        botaoTodos.classList.add('selected');
+    }
 }
 
 function carregarHistorico() {
